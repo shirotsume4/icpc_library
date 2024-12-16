@@ -4865,6 +4865,74 @@ int main() {
     return 0;
 }
 </code></pre>
+<h2>Li-chao tree</h2>
+<p>CHTの一般化</p>
+<ul>
+<li>直線 $y = ax + b$ の追加</li>
+<li>線分 $y = ax + b (l \leq x \lt r)$ の追加</li>
+<li>与えられた $x$ に対する最小値の出力</li>
+</ul>
+<p>$x$ の値は初期化時にわかっている必要がある。クエリ先読みなどしておく
+最大値にしたいときは(a, b)を入れる代わりに(-a, -b)を入れて最小値に-1を掛ければよい</p>
+<pre><code>vector&lt;ll&gt; xs = {1, 2, 3, 4, 5}; // x 座標の定義
+lctree tree(xs);
+
+// 直線追加
+tree.update(2, 3); // y = 2x + 3
+tree.update(-1, 6); // y = -x + 6
+
+// 範囲に直線を追加
+tree.update_segment(1, 4, 3, 2); // 範囲 [1, 4) に y = 3x + 2 を適用
+
+// クエリ
+cout &lt;&lt; tree.query(2) &lt;&lt; endl; // x = 2 における最小値
+cout &lt;&lt; tree.query(4) &lt;&lt; endl; // x = 4 における最小値
+</code></pre>
+<h2>line_container</h2>
+<p>Li-chao treeと違って線分は突っ込めない</p>
+<pre><code>LineContainer&lt;&gt; lc;  // 最小値を求める直線集合
+
+// 直線を追加
+lc.add(2, 3);        // y = 2x + 3
+lc.add(-1, 5);       // y = -x + 5
+lc.add(1, -4);       // y = x - 4
+
+// クエリ
+cout &lt;&lt; lc.query(1) &lt;&lt; endl;  // x = 1 における最小値を出力
+cout &lt;&lt; lc.query(3) &lt;&lt; endl;  // x = 3 における最小値を出力
+
+// 最大値を求める場合
+LineContainer&lt;false&gt; max_lc;
+max_lc.add(2, 3);       // y = 2x + 3
+max_lc.add(-1, 5);      // y = -x + 5
+max_lc.add(1, -4);      // y = x - 4
+
+cout &lt;&lt; max_lc.query(1) &lt;&lt; endl;  // x = 1 における最大値を出力
+cout &lt;&lt; max_lc.query(3) &lt;&lt; endl;  // x = 3 における最大値を出力
+</code></pre>
+<h2>link-cut</h2>
+<p>知らん　木に関するクエリができる</p>
+<h2>pbds</h2>
+<p>C++のデータ構造拡張パックらしい</p>
+<h2>segbeats.hpp</h2>
+<p>Angel Beats!</p>
+<p>遅延セグ木の上位互換　ただし計算量がア</p>
+<p>普通の遅延セグ木で解けなかった場合これでワンチャンかけてもいいかも</p>
+<h2>segtree-2d</h2>
+<p>2次元セグ木</p>
+<h2>segtree</h2>
+<p>セグ木 ACLと一緒</p>
+<pre><code>// 例: セグメント木で区間和を求める
+int op(int a, int b) { return a + b; }
+int e() { return 0; }  // 単位元
+
+vector&lt;int&gt; v = {1, 2, 3, 4, 5};
+segtree&lt;int, op, e&gt; seg(v);
+
+cout &lt;&lt; seg.prod(1, 4);  // 区間 [1, 4) の和を出力 (2 + 3 + 4)
+</code></pre>
+<h2>swag</h2>
+<p>Shirotsumeの推しデータ構造です かわいいね</p>
 </div>
 
 </body>
