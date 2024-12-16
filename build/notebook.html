@@ -4809,8 +4809,9 @@ $a_n=na_{n-1}+(-1)^n$</p>
         <h2 id="ドキュメント.md">ドキュメント.md</h2>
     </div>
     <div class="content content-md"><p>#使い方のメモ。</p>
-<p>``</p>
-<h2>BIT.hpp</h2>
+<h2>hash</h2>
+<p>写経をしたときにミスを発見するために使う。空白や改行を消した状態のハッシュを計算して、一致していれば写経成功している　違えばどこかに違う部分があるとわかる</p>
+<h2>BIT</h2>
 <ul>
 <li><code>BIT B(n)</code> :長さnのBITを作る</li>
 <li><code>B.sum(l, r)</code> :$\sum_{i=l}^{r-1} A_i$ の値を求める。<code>sum(r)</code>で0からの和。</li>
@@ -4826,7 +4827,44 @@ $a_n=na_{n-1}+(-1)^n$</p>
 <li><code>prev(i)</code>: iより小さい最大の値</li>
 </ul>
 <h2>Skew-heap</h2>
-<p>基本的に普通の優先度付きキューと同一。2つのヒープの融合（meld）操作</p>
+<p>基本的に普通の優先度付きキューと同一。2つのヒープの融合（meld）操作が速い
+使わんやろ</p>
+<h2>cht</h2>
+<p>Convex Hull Trick</p>
+<p>CHTは次の操作を効率的に行える。初め、空集合 $S$ があるとする。</p>
+<ul>
+<li>$S$ に直線 $y = ax + b$ を追加 $O(1)$</li>
+<li>$x_0$ が与えられる。$S$ に含まれる直線について、$ax_0 + b$ の値をそれぞれ計算したときの最小値/最大値を求める。$O(\log N)$</li>
+</ul>
+<p>ただし、最小値を求める際は追加する直線の傾きが単調減少、最大値を求める際は追加する直線の傾きが単調増加である必要がある。それを満たせない場合はLi-chao treeなど他の方法で。</p>
+<ul>
+<li><code>CHT&lt;true&gt; C</code> 最小値を求めるCHTの初期化</li>
+<li><code>CHT&lt;false&gt; C</code> 最大値を求めるCHTの初期化</li>
+<li><code>C.add(a, b)</code> 直線a, bを追加</li>
+<li><code>C.query(x)</code> xが与えられた時の最大値最小値</li>
+</ul>
+<p>ところで、xが単調増加/単調減少であることが保証できるなら、query_monotone系を使うことでクエリをO(1)にできる</p>
+<h2>hash_map</h2>
+<p>たぶんunordered_mapでいい　衝突とかあったらこれを使う</p>
+<h2>lazy-segtree</h2>
+<p>遅延セグ木多分ACLと同じ</p>
+<pre><code>using S = long long;
+using F = long long;
+
+S op(S a, S b) { return a + b; }
+S e() { return 0; }
+S mpp(F f, S x) { return f + x; }
+F cmpo(F f1, F f2) { return f1 + f2; }
+F id() { return 0; }
+
+int main() {
+    int n = 10;
+    lazy_segtree&lt;S, op, e, F, mpp, cmpo, id&gt; seg(n);
+    seg.apply(0, 5, 10); // 区間 [0, 5) に 10 を加算
+    cout &lt;&lt; seg.prod(0, 10) &lt;&lt; endl; // 全区間の和を計算
+    return 0;
+}
+</code></pre>
 </div>
 
 </body>
