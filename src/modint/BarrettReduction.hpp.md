@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/modint/BarrettReduction.test.cpp
-    title: test/modint/BarrettReduction.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/modint/BarrettReduction.hpp\"\n\nusing U = uint64_t;\n\
@@ -50,9 +47,8 @@ data:
   path: src/modint/BarrettReduction.hpp
   requiredBy: []
   timestamp: '2024-09-04 19:36:22+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/modint/BarrettReduction.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: src/modint/BarrettReduction.hpp
 layout: document
 title: Barrett Reduction

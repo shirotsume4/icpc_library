@@ -2,16 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/string/LCP.test.cpp
-    title: test/string/LCP.test.cpp
-  - icon: ':x:'
-    path: test/string/SuffixArray.test.cpp
-    title: test/string/SuffixArray.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/string/SuffixArray.hpp\"\n// returns pair{sa, lcp}\n\
@@ -48,10 +42,8 @@ data:
   path: src/string/SuffixArray.hpp
   requiredBy: []
   timestamp: '2024-09-13 21:17:34+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/string/SuffixArray.test.cpp
-  - test/string/LCP.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: src/string/SuffixArray.hpp
 layout: document
 title: Suffix Array

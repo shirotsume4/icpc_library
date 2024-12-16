@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/string/RollingHash.test.cpp
-    title: test/string/RollingHash.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/string/RollingHash.hpp\"\nconst ll mod = (1LL << 61)\
@@ -37,9 +34,8 @@ data:
   path: src/string/RollingHash.hpp
   requiredBy: []
   timestamp: '2024-09-13 21:17:34+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/string/RollingHash.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: src/string/RollingHash.hpp
 layout: document
 title: Rolling Hash

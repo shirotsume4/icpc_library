@@ -2,16 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/FPS/FFT.test.cpp
-    title: test/FPS/FFT.test.cpp
-  - icon: ':x:'
-    path: test/modint/modint.test.cpp
-    title: test/modint/modint.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/modint/modint.hpp\"\nconstexpr int mod = 998244353;\n\
@@ -47,10 +41,8 @@ data:
   path: src/modint/modint.hpp
   requiredBy: []
   timestamp: '2024-11-29 00:14:32+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/modint/modint.test.cpp
-  - test/FPS/FFT.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: src/modint/modint.hpp
 layout: document
 title: Modint

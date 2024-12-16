@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/data-structure/FastSet.test.cpp
-    title: test/data-structure/FastSet.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/data-structure/FastSet.hpp\"\n\nusing U = uint64_t;\n\
@@ -47,9 +44,8 @@ data:
   path: src/data-structure/FastSet.hpp
   requiredBy: []
   timestamp: '2024-09-04 19:36:22+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/data-structure/FastSet.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: src/data-structure/FastSet.hpp
 layout: document
 title: "\u9AD8\u901F bitset (64 \u5206\u6728)"

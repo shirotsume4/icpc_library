@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/data-structure/BIT.test.cpp
-    title: test/data-structure/BIT.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/data-structure/BIT.hpp\"\nstruct BIT {\n   vl a;\n \
@@ -33,9 +30,8 @@ data:
   path: src/data-structure/BIT.hpp
   requiredBy: []
   timestamp: '2024-09-13 21:17:34+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/data-structure/BIT.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: src/data-structure/BIT.hpp
 layout: document
 title: BIT (Fenwick Tree)

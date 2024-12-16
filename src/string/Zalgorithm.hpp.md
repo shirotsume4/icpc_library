@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/string/Zalgorithm.test.cpp
-    title: test/string/Zalgorithm.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/string/Zalgorithm.hpp\"\ntemplate<typename T> vi z_algorithm(const\
@@ -25,9 +22,8 @@ data:
   path: src/string/Zalgorithm.hpp
   requiredBy: []
   timestamp: '2024-09-13 21:17:34+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/string/Zalgorithm.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: src/string/Zalgorithm.hpp
 layout: document
 title: Z Algorithm

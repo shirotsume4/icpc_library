@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/string/KMP.test.cpp
-    title: test/string/KMP.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/string/KMP.hpp\"\n// kmp[i] := max{ l \u2264 i | s[:l]\
@@ -25,9 +22,8 @@ data:
   path: src/string/KMP.hpp
   requiredBy: []
   timestamp: '2024-09-04 19:36:22+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/string/KMP.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: src/string/KMP.hpp
 layout: document
 title: "KMP \u6CD5 (Knuth\u2013Morris\u2013Pratt algorithm)"

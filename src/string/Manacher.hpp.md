@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/string/Manacher.test.cpp
-    title: test/string/Manacher.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/string/Manacher.hpp\"\n// \u5404\u4F4D\u7F6E\u3067\u306E\
@@ -35,9 +32,8 @@ data:
   path: src/string/Manacher.hpp
   requiredBy: []
   timestamp: '2024-09-04 19:36:22+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/string/Manacher.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: src/string/Manacher.hpp
 layout: document
 title: Manacher's algorithm
