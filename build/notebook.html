@@ -4933,6 +4933,29 @@ cout &lt;&lt; seg.prod(1, 4);  // 区間 [1, 4) の和を出力 (2 + 3 + 4)
 </code></pre>
 <h2>swag</h2>
 <p>Shirotsumeの推しデータ構造です かわいいね</p>
+<p>dequeに対して総和を定数時間で求められる</p>
+<pre><code>// 例: 和を求めるSWAG
+auto f = [](int a, int b) { return a + b; };  // 和を計算
+int I = 0;  // 単位元（和の場合は0）
+
+SWAG&lt;int, decltype(f)&gt; swag(f, I);
+
+// 要素を追加
+swag.pushb(1);//末尾追加
+swag.pushb(2);
+swag.pushb(3);
+swag.pusha(4);//先頭追加
+// クエリ: 現在のスライディングウィンドウの合計
+cout &lt;&lt; swag.query() &lt;&lt; endl;  // 出力: 6 (1 + 2 + 3)
+
+// 最初の要素を削除
+swag.pop_front();
+
+// クエリ: 更新後の合計
+cout &lt;&lt; swag.query() &lt;&lt; endl;  // 出力: 5 (2 + 3)
+</code></pre>
+<h2>wavelet_matrix</h2>
+<p>静的な列に対する大小関係のクエリに対する万能薬　いろいろできる</p>
 </div>
 
 </body>
