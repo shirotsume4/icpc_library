@@ -4809,6 +4809,24 @@ $a_n=na_{n-1}+(-1)^n$</p>
         <h2 id="ドキュメント.md">ドキュメント.md</h2>
     </div>
     <div class="content content-md"><p>#使い方のメモ。</p>
+<p>``</p>
+<h2>BIT.hpp</h2>
+<ul>
+<li><code>BIT B(n)</code> :長さnのBITを作る</li>
+<li><code>B.sum(l, r)</code> :$\sum_{i=l}^{r-1} A_i$ の値を求める。<code>sum(r)</code>で0からの和。</li>
+</ul>
+<h2>FastSet</h2>
+<p>std::setより高速。bitsetで要素の存在を管理する。</p>
+<ul>
+<li><code>FS S(n)</code>: 0以上n未満の値を格納できるFSを作る</li>
+<li><code>S.set(i)</code>: iを挿入</li>
+<li><code>S.erase(i)</code>: iを削除</li>
+<li><code>S[i]</code>: iが存在するならtrue,存在しないならfalse</li>
+<li><code>next(i)</code>: iより大きい最小の値</li>
+<li><code>prev(i)</code>: iより小さい最大の値</li>
+</ul>
+<h2>Skew-heap</h2>
+<p>基本的に普通の優先度付きキューと同一。2つのヒープの融合（meld）操作</p>
 </div>
 
 </body>
