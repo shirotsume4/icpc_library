@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: .
+    pages:
+    - icon: ':warning:'
+      path: a.cpp
+      title: a.cpp
   - name: src/FPS
     pages:
     - icon: ':warning:'
