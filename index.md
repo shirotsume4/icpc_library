@@ -36,6 +36,12 @@ data:
       path: src/data-structure/cht.hpp
       title: src/data-structure/cht.hpp
     - icon: ':warning:'
+      path: src/data-structure/dsu-potential.hpp
+      title: src/data-structure/dsu-potential.hpp
+    - icon: ':warning:'
+      path: src/data-structure/dsu.hpp
+      title: src/data-structure/dsu.hpp
+    - icon: ':warning:'
       path: src/data-structure/hash_map.hpp
       title: src/data-structure/hash_map.hpp
     - icon: ':warning:'
@@ -127,6 +133,9 @@ data:
     - icon: ':warning:'
       path: src/graph/bcc.hpp
       title: src/graph/bcc.hpp
+    - icon: ':warning:'
+      path: src/graph/dijkstra.hpp
+      title: src/graph/dijkstra.hpp
     - icon: ':warning:'
       path: src/graph/eulerian-trail.hpp
       title: src/graph/eulerian-trail.hpp

@@ -45,17 +45,16 @@ data:
     \  if(piv[j] == -1) {\n         vector<T> x(m);\n         x[j] = 1;\n        \
     \ rep(k, j) {\n            if(piv[k] != -1) x[k] = -a[piv[k]][j];\n         }\n\
     \         res.eb(x);\n      }\n   }\n   return res;\n}\ntemplate<typename T> T\
-    \ determinant(M<T> a) {\n    int n = a.n;\n    T det = 1;\n    for (int i = 0;\
-    \ i < n; ++i) {\n        int pivot = i;\n        for (int j = i + 1; j < n; ++j)\
-    \ {\n            if (abs(a[j][i]) > abs(a[pivot][i])) pivot = j;\n        }\n\
-    \        if (a[pivot][i] == 0) return 0; // \u884C\u5217\u304C\u7279\u7570\u884C\
-    \u5217\u306E\u5834\u5408\n\n        if (i != pivot) {\n            swap(a[i],\
-    \ a[pivot]);\n            det = -det; // \u884C\u3092\u4EA4\u63DB\u3059\u308B\u3068\
-    \u7B26\u53F7\u304C\u5909\u308F\u308B\n        }\n\n        det *= a[i][i];\n \
-    \       T inv = 1 / a[i][i]; // \u30D4\u30DC\u30C3\u30C8\u8981\u7D20\u306E\u9006\
-    \u6570\n\n        for (int j = i + 1; j < n; ++j) {\n            T coeff = a[j][i]\
-    \ * inv;\n            for (int k = i; k < n; ++k) {\n                a[j][k] -=\
-    \ coeff * a[i][k];\n            }\n        }\n    }\n    return det;\n}\n"
+    \ determinant(M<T> a) {\n   int n = a.n;\n   T det = 1;\n   for(int i = 0; i <\
+    \ n; ++i) {\n      int pivot = i;\n      for(int j = i + 1; j < n; ++j) {\n  \
+    \       if(abs(a[j][i]) > abs(a[pivot][i])) pivot = j;\n      }\n      if(a[pivot][i]\
+    \ == 0) return 0;  // \u884C\u5217\u304C\u7279\u7570\u884C\u5217\u306E\u5834\u5408\
+    \n\n      if(i != pivot) {\n         swap(a[i], a[pivot]);\n         det = -det;\
+    \  // \u884C\u3092\u4EA4\u63DB\u3059\u308B\u3068\u7B26\u53F7\u304C\u5909\u308F\
+    \u308B\n      }\n\n      det *= a[i][i];\n      T inv = 1 / a[i][i];  // \u30D4\
+    \u30DC\u30C3\u30C8\u8981\u7D20\u306E\u9006\u6570\n\n      for(int j = i + 1; j\
+    \ < n; ++j) {\n         T coeff = a[j][i] * inv;\n         for(int k = i; k <\
+    \ n; ++k) { a[j][k] -= coeff * a[i][k]; }\n      }\n   }\n   return det;\n}\n"
   code: "\ntemplate<typename T> struct M {\n   vector<vector<T>> a;\n   int n, m;\n\
     \   M(int n, int m) : n(n), m(m), a(n, vector<T>(m)) {}\n   M(int n = 0) : M<T>(n,\
     \ n) {}\n   vector<T>& operator[](int k) { return a[k]; }\n   const vector<T>&\
@@ -93,22 +92,21 @@ data:
     \  if(piv[j] == -1) {\n         vector<T> x(m);\n         x[j] = 1;\n        \
     \ rep(k, j) {\n            if(piv[k] != -1) x[k] = -a[piv[k]][j];\n         }\n\
     \         res.eb(x);\n      }\n   }\n   return res;\n}\ntemplate<typename T> T\
-    \ determinant(M<T> a) {\n    int n = a.n;\n    T det = 1;\n    for (int i = 0;\
-    \ i < n; ++i) {\n        int pivot = i;\n        for (int j = i + 1; j < n; ++j)\
-    \ {\n            if (abs(a[j][i]) > abs(a[pivot][i])) pivot = j;\n        }\n\
-    \        if (a[pivot][i] == 0) return 0; // \u884C\u5217\u304C\u7279\u7570\u884C\
-    \u5217\u306E\u5834\u5408\n\n        if (i != pivot) {\n            swap(a[i],\
-    \ a[pivot]);\n            det = -det; // \u884C\u3092\u4EA4\u63DB\u3059\u308B\u3068\
-    \u7B26\u53F7\u304C\u5909\u308F\u308B\n        }\n\n        det *= a[i][i];\n \
-    \       T inv = 1 / a[i][i]; // \u30D4\u30DC\u30C3\u30C8\u8981\u7D20\u306E\u9006\
-    \u6570\n\n        for (int j = i + 1; j < n; ++j) {\n            T coeff = a[j][i]\
-    \ * inv;\n            for (int k = i; k < n; ++k) {\n                a[j][k] -=\
-    \ coeff * a[i][k];\n            }\n        }\n    }\n    return det;\n}"
+    \ determinant(M<T> a) {\n   int n = a.n;\n   T det = 1;\n   for(int i = 0; i <\
+    \ n; ++i) {\n      int pivot = i;\n      for(int j = i + 1; j < n; ++j) {\n  \
+    \       if(abs(a[j][i]) > abs(a[pivot][i])) pivot = j;\n      }\n      if(a[pivot][i]\
+    \ == 0) return 0;  // \u884C\u5217\u304C\u7279\u7570\u884C\u5217\u306E\u5834\u5408\
+    \n\n      if(i != pivot) {\n         swap(a[i], a[pivot]);\n         det = -det;\
+    \  // \u884C\u3092\u4EA4\u63DB\u3059\u308B\u3068\u7B26\u53F7\u304C\u5909\u308F\
+    \u308B\n      }\n\n      det *= a[i][i];\n      T inv = 1 / a[i][i];  // \u30D4\
+    \u30DC\u30C3\u30C8\u8981\u7D20\u306E\u9006\u6570\n\n      for(int j = i + 1; j\
+    \ < n; ++j) {\n         T coeff = a[j][i] * inv;\n         for(int k = i; k <\
+    \ n; ++k) { a[j][k] -= coeff * a[i][k]; }\n      }\n   }\n   return det;\n}"
   dependsOn: []
   isVerificationFile: false
   path: src/math/matrix.hpp
   requiredBy: []
-  timestamp: '2024-12-20 09:46:10+09:00'
+  timestamp: '2024-12-20 00:47:35+00:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/math/matrix.hpp
