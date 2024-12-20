@@ -107,3 +107,30 @@ template<typename T> vector<vector<T>> LinearEquation(M<T> a, vector<T> b) {
    }
    return res;
 }
+template<typename T> T determinant(M<T> a) {
+    int n = a.n;
+    T det = 1;
+    for (int i = 0; i < n; ++i) {
+        int pivot = i;
+        for (int j = i + 1; j < n; ++j) {
+            if (abs(a[j][i]) > abs(a[pivot][i])) pivot = j;
+        }
+        if (a[pivot][i] == 0) return 0; // 行列が特異行列の場合
+
+        if (i != pivot) {
+            swap(a[i], a[pivot]);
+            det = -det; // 行を交換すると符号が変わる
+        }
+
+        det *= a[i][i];
+        T inv = 1 / a[i][i]; // ピボット要素の逆数
+
+        for (int j = i + 1; j < n; ++j) {
+            T coeff = a[j][i] * inv;
+            for (int k = i; k < n; ++k) {
+                a[j][k] -= coeff * a[i][k];
+            }
+        }
+    }
+    return det;
+}

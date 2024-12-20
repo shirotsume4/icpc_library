@@ -7,3 +7,5 @@ void pre() {
    per(i, N - 1, 0) ifact[i] = ifact[i + 1] * (i + 1);
 }
 mint C(int n, int m) { return (n < m or m < 0 ? 0 : fact[n] * ifact[m] * ifact[n - m]); }
+mint P(int n, int m) { return (n < m or m < 0 ? 0 : fact[n] * ifact[n - m]); }
+mint H(int n, int m) { return (n == 0 and m == 0 ? 1 : C(n + m - 1, m)); }
