@@ -1768,7 +1768,7 @@ ll <span class="token function">inv_mod</span><span class="token punctuation">(<
 
     <div class="filename">
         <h2 id="binom.hpp">binom.hpp</h2>
-        md5: db2821
+        md5: abc57b
 
     </div>
     <div class="content content-hpp">
@@ -1781,7 +1781,8 @@ mint fact<span class="token punctuation">[</span>N<span class="token punctuation
    <span class="token function">per</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> N <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> ifact<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> ifact<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 mint <span class="token function">C</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">int</span> m<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> m <span class="token operator">or</span> m <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> fact<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">*</span> ifact<span class="token punctuation">[</span>m<span class="token punctuation">]</span> <span class="token operator">*</span> ifact<span class="token punctuation">[</span>n <span class="token operator">-</span> m<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-</code></pre>
+mint <span class="token function">P</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">int</span> m<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> m <span class="token operator">or</span> m <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> fact<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">*</span> ifact<span class="token punctuation">[</span>n <span class="token operator">-</span> m<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+mint <span class="token function">H</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">int</span> m<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">and</span> m <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token number">1</span> <span class="token operator">:</span> <span class="token function">C</span><span class="token punctuation">(</span>n <span class="token operator">+</span> m <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> m<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span></code></pre>
 </div>
 
     <div class="filename">
@@ -1853,7 +1854,7 @@ ll <span class="token function">floor_sum</span><span class="token punctuation">
 
     <div class="filename">
         <h2 id="matrix.hpp">matrix.hpp</h2>
-        md5: 270f1c
+        md5: 472f21
 
     </div>
     <div class="content content-hpp">
@@ -1965,6 +1966,31 @@ ll <span class="token function">floor_sum</span><span class="token punctuation">
       <span class="token punctuation">}</span>
    <span class="token punctuation">}</span>
    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">typename</span> <span class="token class-name">T</span><span class="token operator">></span> T <span class="token function">determinant</span><span class="token punctuation">(</span>M<span class="token operator">&lt;</span>T<span class="token operator">></span> a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">int</span> n <span class="token operator">=</span> a<span class="token punctuation">.</span>n<span class="token punctuation">;</span>
+   T det <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+   <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> pivot <span class="token operator">=</span> i<span class="token punctuation">;</span>
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token function">abs</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>pivot<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> pivot <span class="token operator">=</span> j<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>pivot<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">// 行列が特異行列の場合</span>
+
+      <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">!=</span> pivot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token function">swap</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> a<span class="token punctuation">[</span>pivot<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         det <span class="token operator">=</span> <span class="token operator">-</span>det<span class="token punctuation">;</span>  <span class="token comment">// 行を交換すると符号が変わる</span>
+      <span class="token punctuation">}</span>
+
+      det <span class="token operator">*=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      T inv <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">/</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">// ピボット要素の逆数</span>
+
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         T coeff <span class="token operator">=</span> a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*</span> inv<span class="token punctuation">;</span>
+         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k <span class="token operator">=</span> i<span class="token punctuation">;</span> k <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>k<span class="token punctuation">)</span> <span class="token punctuation">{</span> a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">-=</span> coeff <span class="token operator">*</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">return</span> det<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 </div>
 
@@ -5039,6 +5065,128 @@ for (int i = 0; i &lt; q; ++i) {
 <p>わからん</p>
 <h2>monotone-minima</h2>
 <p>monotone性を満たす行列に対して，各行に対する最小値の場所と値を求める．</p>
+<p>わからん</p>
+<h1>math</h1>
+<h2>ExtGCD</h2>
+<p>拡張ユークリッドの互除法</p>
+<pre><code>// Returns gcd(a, b) and assigns x, y such that ax + by = gcd(a, b)
+// and |x| + |y| is minimized.
+ll extgcd(ll a, ll b, ll&amp; x, ll&amp; y) {
+   // assert(a &gt;= 0 &amp;&amp; b &gt;= 0);
+   if (!b) return x = 1, y = 0, a;
+   ll d = extgcd(b, a % b, y, x);
+   y -= a / b * x;
+   return d;
+}
+
+// Returns the modular inverse of x modulo md.
+ll inv_mod(ll x, ll md) {
+   ll y, z;
+   extgcd(x, md, y, z);
+   return (y % md + md) % md;
+}
+
+// ax + by = cの解のうち一つ(x_0, y_0)を求める
+bool solve_diophantine(ll a, ll b, ll c, ll&amp; x, ll&amp; y) {
+    ll g = extgcd(a, b, x, y);
+    if (c % g != 0) return false; // 解なし
+    x *= c / g;
+    y *= c / g;
+    return true;
+}
+</code></pre>
+<p>特解を $x_0, y_0$ とすると、一般解は $x = x_0 + k \frac{b}{\gcd(a, b)}, y = y_0 - k \frac{a}{\gcd(a,b)}$</p>
+<h2>and-or-convolution</h2>
+<p>$c_k = \sum_{i \lor j = k} a_i b_j$ みたいなのを求める。</p>
+<p>$a, b$ を変換→各点積 $c$ を取る→ $c$ を逆変換でできる</p>
+<h2>binom.hpp</h2>
+<p>二項係数 H, Pを追記</p>
+<h2>crt</h2>
+<p>中国剰余定理 extgcdが前提</p>
+<p>割る数の配列が $b$ 、あまりの配列が $c$</p>
+<h2>floor_sum</h2>
+<p>はい</p>
+<h2>lagrange-hokan</h2>
+<p>数列の前 $|y|$ 項が与えられたときに、ラグランジュ補間で $t$ 項目を求める</p>
+<h2>matrix</h2>
+<p>行列計算</p>
+<p>個人的に要りそうだったので行列式を追加</p>
+<h2>prime</h2>
+<p>素数判定&amp;素因数分解</p>
+<h2>primitive-root</h2>
+<p>素数 $p$ について、$r, r^2, \dots, r^{p-1}$ をそれぞれ $P$ で割った余りが全部異なる物を原始根という。そのうちの一つを求める</p>
+<h2>xor-convolution</h2>
+<p>はい</p>
+<h1>graph</h1>
+<h2>bcc</h2>
+<p>二重頂点連結成分分解。</p>
+<h2>lowlink</h2>
+<p>グラフから橋（消すとグラフが分離される辺）と関節点（消すとグラフが分離される頂点）を列挙</p>
+<h2>max_matching</h2>
+<p>一般最大マッチング　最終手段</p>
+<h2>maximum-independent-set</h2>
+<p>グラフの最大独立集合</p>
+<h2>scc</h2>
+<p>強連結成分分解</p>
+<h2>tecc</h2>
+<p>二重辺？わからん</p>
+<h1>modint</h1>
+<h2>barrettreduction</h2>
+<p>さらなる高速化が必要な場合</p>
+<h2>modint</h2>
+<p>普通のmodint まずはこっちを使うのでよいと思います</p>
+<h1>FPS</h1>
+<h2>FFT</h2>
+<p>FFT で多項式の積を高速に</p>
+<h2>linear-recurrence</h2>
+<p>きたまさ法で $[x^k]\frac{P(x)}{Q(x)}$ が高速に求まる</p>
+<h2>poly</h2>
+<p>FPSのライブラリ。かなり長いので、方針が固まりきらない限り使わないほうがいいだろう</p>
+<h2>relaxed-convolution</h2>
+<p>いわゆる分割統治畳み込みをより柔軟に行えるもの。</p>
+<p>普通畳み込みは2つの列 $F, G$ が両方初めからわかっていないと使えないが、これを使えば値が動的に決まる場合（例えば、$f_{i}$ が $f_{i-1}$ 以前をもとに決まる場合など）にも使うことができる。add(f_i, g_i) で、積の $i$ 項目 $h_i$ が帰ってくる。</p>
+<h1>tree</h1>
+<h2>block-cut-tree</h2>
+<p>勉強していません</p>
+<h2>hld</h2>
+<p>木のクエリをいい感じに解いてくれる奴　勉強していません</p>
+<h1>flow</h1>
+<h2>bipartite-matching</h2>
+<p>二部マッチング</p>
+<h2>flow</h2>
+<p>ACLと同じ</p>
+<h2>lower-upper-bound-flow</h2>
+<p>辺の流量に上下限がある場合のフロー</p>
+<h2>mcf</h2>
+<p>最小費用流</p>
+<h1>string</h1>
+<h2>KMP</h2>
+<p>ロリハでいい</p>
+<h2>Manacher</h2>
+<p>回文半径 コードに説明がある</p>
+<h2>ROllingHash</h2>
+<p>ロリハ</p>
+<h2>SuffixArray</h2>
+<h2>Zalgorithm</h2>
+<h2>enumerate-runs</h2>
+<h1>geometry</h1>
+<h2>argument-sort</h2>
+<p>偏角ソート</p>
+<h2>circle</h2>
+<p>円の座標についてのいろいろ</p>
+<h2>convex-hull</h2>
+<p>凸包</p>
+<h2>funcs</h2>
+<p>幾何の段になったらまずこれを写経</p>
+<h2>line</h2>
+<p>まず写経2</p>
+<h1>misc</h1>
+<h2>clock</h2>
+<p>時間計測</p>
+<h2>simplex</h2>
+<p>単体法による最適化</p>
+<p>$A$ に制約条件の行列、$B$ に制約条件の右辺、$C$ に目的関数のベクトルを置く</p>
+<p>最後のあがきとして</p>
 </div>
 
 </body>
